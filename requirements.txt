@@ -1,0 +1,17 @@
+# AI & Machine Learning Libraries (for model training and inference)
+torch
+transformers
+datasets
+peft
+trl
+bitsandbytes
+accelerate
+
+# Backend Server Libraries
+Flask
+flask-cors
+requests
+
+# Data Analysis Libraries
+pandas
+openpyxl

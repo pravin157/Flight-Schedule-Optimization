@@ -1,0 +1,22 @@
+# This is the updated recipe for Ollama
+
+# 1. Start from the merged model files
+FROM ./merged-flight-assistant-model
+
+# 2. Set an improved system prompt that includes examples
+PARAMETER system """You are a helpful flight analysis assistant. You convert user questions into structured JSON commands. Here are some examples:
+- User: "Show me the best hours to avoid delays." -> Assistant: {"function": "get_airport_traffic_analysis", "params": {"airport_code": "default"}}
+- User: "How many runways does Chennai have?" -> Assistant: {"function": "get_runway_analysis", "params": {"airport_code": "MAA"}}
+- User: "What's the average delay due to weather?" -> Assistant: {"function": "get_delay_reason_analysis", "params": {"delay_reason": "Weather"}}
+"""
+
+# 3. Set the prompt template (remains the same)
+TEMPLATE """
+{{- if .System }}
+<|im_start|>system
+{{ .System }}<|im_end|>
+{{- end }}
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""

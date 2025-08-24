@@ -1,0 +1,87 @@
+# --- Python cache/build artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dll
+*.dylib
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# --- Virtual environments ---
+venv/
+.env/
+.venv/
+ENV/
+env/
+
+# --- Logs & runtime ---
+*.log
+*.pid
+*.seed
+instance/
+
+# --- Jupyter / IPython ---
+.ipynb_checkpoints/
+.profile_default/
+
+# --- IDE / Editor ---
+.vscode/
+*.code-workspace
+.idea/
+*.swp
+*.swo
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Environment / secrets ---
+.env.local
+.env.*.local
+.env
+*.secret
+secrets.json
+
+# --- Hugging Face / Transformers caches ---
+.cache/
+**/cache/
+**/hf_cache/
+
+# --- Large model artifacts (kept local, not versioned) ---
+Model/merged-flight-assistant-model/
+Model/qwen2-flight-assistant-final/
+
+# If you later want to version lightweight config (e.g., Modelfile), ensure those specific files are NOT ignored above.
+!Model/Modelfile
+
+# --- Data files (Excel etc.) ---
+# Comment out lines below if you decide to version raw data.
+Data/**/*.xlsx
+Data/**/*.xls
+Data/**/*.csv
+
+# Keep curated training data JSONL if needed
+!Model/training_data.jsonl
+
+# --- Node / Frontend (in case added later) ---
+node_modules/
+*.tsbuildinfo
+
+# --- Coverage / Testing ---
+.coverage
+htmlcov/
+.coverage.*
+.pytest_cache/
+
+# --- Reports / exports ---
+reports/
+*.html~
+
+# --- Temporary files ---
+*.tmp
+*.temp
+~$*
